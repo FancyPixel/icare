@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 # From Diaspora
 
-worker_processes 3
+worker_processes 2
 timeout 30
 preload_app true
 

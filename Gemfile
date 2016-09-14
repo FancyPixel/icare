@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 source 'https://rubygems.org'
 
-ruby '2.3.1'
+# ruby '2.3.1'
 gem 'rails', '4.2.6'
 
 # Servers
@@ -104,4 +104,5 @@ end
 group :staging, :production do
   gem 'rails_12factor' # Only for heroku
   gem 'unicorn'
+  gem 'foreman'
 end

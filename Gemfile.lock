@@ -120,6 +120,8 @@ GEM
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.10)
+    foreman (0.78.0)
+      thor (~> 0.19.1)
     git-version-bump (0.15.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
@@ -450,6 +452,7 @@ DEPENDENCIES
   email_spec
   factory_girl_rails
   faker
+  foreman
   google-analytics-rails
   handlebars_assets
   http_accept_language
@@ -502,9 +505,6 @@ DEPENDENCIES
   unicorn
   web-console
   webmock
-
-RUBY VERSION
-   ruby 2.3.1p112
 
 BUNDLED WITH
    1.12.5
