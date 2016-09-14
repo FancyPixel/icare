@@ -75,9 +75,6 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-
-  puts "\n\n#{APP_CONFIG.mailer.smtp_settings.address}\n\n"
-
   config.action_mailer.default_url_options = { host: APP_CONFIG.mailer.host }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
