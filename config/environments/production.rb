@@ -74,8 +74,25 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-  config.action_mailer.raise_delivery_errors = true
+
+
+  puts "\n\n#{APP_CONFIG.mailer.smtp_settings.address}\n\n"
+
   config.action_mailer.default_url_options = { host: APP_CONFIG.mailer.host }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default charset: 'utf-8'
+  ActionMailer::Base.default from: APP_CONFIG.mailer.from
+  config.action_mailer.smtp_settings = {
+      address: APP_CONFIG.mailer.smtp_settings.address,
+      port: APP_CONFIG.mailer.smtp_settings.port,
+      authentication: APP_CONFIG.mailer.smtp_settings.authentication,
+      user_name: APP_CONFIG.mailer.smtp_settings.user_name,
+      password: APP_CONFIG.mailer.smtp_settings.password,
+      domain: APP_CONFIG.mailer.smtp_settings.domain,
+      enable_starttls_auto: APP_CONFIG.mailer.smtp_settings.enable_starttls_auto
+  }
 
   # Google Analytics
   GA.tracker = APP_CONFIG.google_analytics_id if APP_CONFIG.exists? :google_analytics_id
