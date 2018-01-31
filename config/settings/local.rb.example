@@ -37,14 +37,9 @@ SimpleConfig.for :application do
     end
   end
 
-  # To enable domains filter uncomment next lines
-#  set :allowed_email_domains_regexp, %r{
-#    /\A([\w\.%\+\-]+)
-#    (domain1\.example\.com\z)|
-#    (domain2\.example\.com\z)
-#    /i
-#    end
-#  }x
+  # To enable domains filter uncomment next line
+  # set :allowed_email_domains_regexp, /\A[^@]+@((ami\.fe\.it)|(ausl\.fe\.it)|(comune\.fe\.it)|(gruppohera\.it )|(ifmferrara\.com)|(ospfe\.it)|(provincia\.fe\.it)|(tper\.it)|(mafer\-online\.it)|(unife\.it)|(student\.unife\.it)|(versalis\.eni\.com)|(lyb\.com)|(lyondellbasell\.com)|(fancypixel\.it))\z/i
+
 
   # Default: no domains filter, Devise base email validation regexp is set
   set :allowed_email_domains_regexp, '/\A[^@]+@[^@]+\z/'
